@@ -44,6 +44,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Modules:
+      - General:
+          - Five Big Questions in Empirical Economics: modules/general/econ_questions.md
       - Module 1:
           - Overview: modules/module 1/module1.md
           - 1. Econometrics and Questions: modules/module 1/01-econometrics-questions.md

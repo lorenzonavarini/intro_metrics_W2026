@@ -295,4 +295,336 @@ document.addEventListener("DOMContentLoaded", () => {
   initSelectionDemo();
   initSamplingDemo();
   initCorrelationDemo();
+  initOlsFitDemo();
+  initAnscombeDemo();
+  initFunctionalFormDemo();
+  initExogeneityDemo();
+  initOlsSamplingDemo();
 });
+
+function olsFit(xs, ys) {
+  const mx = mean(xs);
+  const my = mean(ys);
+  const b1 =
+    xs.reduce((s, x, i) => s + (x - mx) * (ys[i] - my), 0) /
+    xs.reduce((s, x) => s + (x - mx) ** 2, 0);
+  return { b0: my - b1 * mx, b1 };
+}
+
+function initOlsFitDemo() {
+  const root = document.getElementById("ols-fit-demo");
+  if (!root) return;
+
+  const interceptInput = document.getElementById("ols-intercept");
+  const slopeInput = document.getElementById("ols-slope");
+  const reset = document.getElementById("ols-reset");
+  const canvas = document.getElementById("ols-fit-canvas");
+  const userSsrEl = document.getElementById("ols-user-ssr");
+  const bestSsrEl = document.getElementById("ols-best-ssr");
+  const bestSlopeEl = document.getElementById("ols-best-slope");
+
+  const normal = normalGenerator(220);
+  const xs = Array.from({ length: 36 }, () => 8 + 12 * seededRandom(Math.floor(100000 * Math.abs(normal())))());
+  const ys = xs.map((x) => 25 + 6.5 * x + 12 * normal());
+  const best = olsFit(xs, ys);
+  const xMin = Math.min(...xs) - 1;
+  const xMax = Math.max(...xs) + 1;
+  const yMin = Math.min(...ys) - 15;
+  const yMax = Math.max(...ys) + 15;
+
+  function xScale(x) {
+    return 42 + ((x - xMin) / (xMax - xMin)) * (canvas.width - 84);
+  }
+  function yScale(y) {
+    return canvas.height - 42 - ((y - yMin) / (yMax - yMin)) * (canvas.height - 84);
+  }
+  function ssr(b0, b1) {
+    return ys.reduce((s, y, i) => s + (y - b0 - b1 * xs[i]) ** 2, 0);
+  }
+  function drawLine(ctx, b0, b1, color, width) {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.beginPath();
+    ctx.moveTo(xScale(xMin), yScale(b0 + b1 * xMin));
+    ctx.lineTo(xScale(xMax), yScale(b0 + b1 * xMax));
+    ctx.stroke();
+  }
+  function render() {
+    const b0 = Number(interceptInput.value);
+    const b1 = Number(slopeInput.value) / 2;
+    const ctx = clearCanvas(canvas);
+    drawAxes(ctx, canvas.width, canvas.height, 42);
+    ctx.fillStyle = "#374151";
+    ctx.font = "13px sans-serif";
+    ctx.fillText("Move the line; OLS minimizes SSR", 42, 24);
+    drawLine(ctx, best.b0, best.b1, "rgba(185, 28, 28, 0.8)", 3);
+    drawLine(ctx, b0, b1, "#0063a6", 3);
+    xs.forEach((x, i) => {
+      const yHat = b0 + b1 * x;
+      ctx.strokeStyle = "rgba(102, 102, 102, 0.35)";
+      ctx.beginPath();
+      ctx.moveTo(xScale(x), yScale(ys[i]));
+      ctx.lineTo(xScale(x), yScale(yHat));
+      ctx.stroke();
+      ctx.fillStyle = "#0063a6";
+      ctx.beginPath();
+      ctx.arc(xScale(x), yScale(ys[i]), 3.5, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+    userSsrEl.textContent = ssr(b0, b1).toFixed(0);
+    bestSsrEl.textContent = ssr(best.b0, best.b1).toFixed(0);
+    bestSlopeEl.textContent = best.b1.toFixed(2);
+  }
+  interceptInput.addEventListener("input", render);
+  slopeInput.addEventListener("input", render);
+  reset.addEventListener("click", () => {
+    interceptInput.value = String(Math.round(best.b0));
+    slopeInput.value = String(Math.round(best.b1 * 2));
+    render();
+  });
+  render();
+}
+
+function initAnscombeDemo() {
+  const root = document.getElementById("anscombe-demo");
+  if (!root) return;
+  const input = document.getElementById("anscombe-set");
+  const button = document.getElementById("anscombe-cycle");
+  const canvas = document.getElementById("anscombe-canvas");
+  const slopeEl = document.getElementById("anscombe-slope");
+  const interceptEl = document.getElementById("anscombe-intercept");
+  const r2El = document.getElementById("anscombe-r2");
+  const sets = [
+    [[10,8.04],[8,6.95],[13,7.58],[9,8.81],[11,8.33],[14,9.96],[6,7.24],[4,4.26],[12,10.84],[7,4.82],[5,5.68]],
+    [[10,9.14],[8,8.14],[13,8.74],[9,8.77],[11,9.26],[14,8.10],[6,6.13],[4,3.10],[12,9.13],[7,7.26],[5,4.74]],
+    [[10,7.46],[8,6.77],[13,12.74],[9,7.11],[11,7.81],[14,8.84],[6,6.08],[4,5.39],[12,8.15],[7,6.42],[5,5.73]],
+    [[8,6.58],[8,5.76],[8,7.71],[8,8.84],[8,8.47],[8,7.04],[8,5.25],[19,12.50],[8,5.56],[8,7.91],[8,6.89]],
+  ];
+  function render() {
+    const data = sets[Number(input.value) - 1];
+    const xs = data.map((d) => d[0]);
+    const ys = data.map((d) => d[1]);
+    const fit = olsFit(xs, ys);
+    const yMean = mean(ys);
+    const ssr = ys.reduce((s, y, i) => s + (y - fit.b0 - fit.b1 * xs[i]) ** 2, 0);
+    const sst = ys.reduce((s, y) => s + (y - yMean) ** 2, 0);
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const xMin = 3, xMax = 20, yMin = 2, yMax = 14;
+    const xScale = (x) => margin + ((x - xMin) / (xMax - xMin)) * (canvas.width - 2 * margin);
+    const yScale = (y) => canvas.height - margin - ((y - yMin) / (yMax - yMin)) * (canvas.height - 2 * margin);
+    ctx.fillStyle = "#374151";
+    ctx.font = "13px sans-serif";
+    ctx.fillText(`Anscombe dataset ${input.value}`, margin, 24);
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xScale(xMin), yScale(fit.b0 + fit.b1 * xMin));
+    ctx.lineTo(xScale(xMax), yScale(fit.b0 + fit.b1 * xMax));
+    ctx.stroke();
+    ctx.fillStyle = "#0063a6";
+    data.forEach(([x, y]) => {
+      ctx.beginPath();
+      ctx.arc(xScale(x), yScale(y), 4, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+    slopeEl.textContent = fit.b1.toFixed(2);
+    interceptEl.textContent = fit.b0.toFixed(2);
+    r2El.textContent = (1 - ssr / sst).toFixed(2);
+  }
+  input.addEventListener("input", render);
+  button.addEventListener("click", () => {
+    input.value = String((Number(input.value) % 4) + 1);
+    render();
+  });
+  render();
+}
+
+function initFunctionalFormDemo() {
+  const root = document.getElementById("functional-form-demo");
+  if (!root) return;
+  const select = document.getElementById("functional-form-select");
+  const button = document.getElementById("functional-resimulate");
+  const canvas = document.getElementById("functional-canvas");
+  const labelEl = document.getElementById("functional-label");
+  const slopeEl = document.getElementById("functional-slope");
+  const meaningEl = document.getElementById("functional-meaning");
+  let seed = 720;
+
+  function fitFor(form, xs, ys) {
+    const tx = xs.map((x) => (form === "logx" || form === "loglog" ? Math.log(x) : x));
+    const ty = ys.map((y) => (form === "logy" || form === "loglog" ? Math.log(y) : y));
+    return olsFit(tx, ty);
+  }
+  function render() {
+    const normal = normalGenerator(seed);
+    const xs = Array.from({ length: 120 }, (_, i) => 1 + (i / 119) * 19);
+    const ys = xs.map((x) => Math.exp(1.2 + 0.08 * x + 0.18 * normal()));
+    const form = select.value;
+    const fit = fitFor(form, xs, ys);
+    const xMin = 0, xMax = 21, yMin = 0, yMax = Math.max(...ys) * 1.15;
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const xScale = (x) => margin + ((x - xMin) / (xMax - xMin)) * (canvas.width - 2 * margin);
+    const yScale = (y) => canvas.height - margin - ((y - yMin) / (yMax - yMin)) * (canvas.height - 2 * margin);
+    ctx.fillStyle = "rgba(0, 99, 166, 0.35)";
+    xs.forEach((x, i) => {
+      ctx.beginPath();
+      ctx.arc(xScale(x), yScale(ys[i]), 2.5, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+    function pred(x) {
+      if (form === "level") return fit.b0 + fit.b1 * x;
+      if (form === "logy") return Math.exp(fit.b0 + fit.b1 * x);
+      if (form === "logx") return fit.b0 + fit.b1 * Math.log(x);
+      return Math.exp(fit.b0 + fit.b1 * Math.log(x));
+    }
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    for (let j = 1; j <= 100; j += 1) {
+      const x = 0.2 + (j / 100) * 20;
+      const y = pred(x);
+      if (j === 1) ctx.moveTo(xScale(x), yScale(y));
+      else ctx.lineTo(xScale(x), yScale(y));
+    }
+    ctx.stroke();
+    const labels = {
+      level: ["level-level", "units per unit"],
+      logy: ["log-level", "% per unit"],
+      logx: ["level-log", "units per 1%"],
+      loglog: ["log-log", "% per 1%"],
+    };
+    labelEl.textContent = labels[form][0];
+    slopeEl.textContent = fit.b1.toFixed(3);
+    meaningEl.textContent = labels[form][1];
+  }
+  select.addEventListener("change", render);
+  button.addEventListener("click", () => {
+    seed += 1;
+    render();
+  });
+  render();
+}
+
+function initExogeneityDemo() {
+  const root = document.getElementById("exogeneity-demo");
+  if (!root) return;
+  const selInput = document.getElementById("exog-selection");
+  const nInput = document.getElementById("exog-n");
+  const button = document.getElementById("exog-resimulate");
+  const canvas = document.getElementById("exog-canvas");
+  const trueEl = document.getElementById("exog-true");
+  const olsEl = document.getElementById("exog-ols");
+  const biasEl = document.getElementById("exog-bias");
+  let seed = 820;
+
+  function render() {
+    const normal = normalGenerator(seed);
+    const n = Number(nInput.value);
+    const gamma = Number(selInput.value) / 60;
+    const beta = 1;
+    const xs = [];
+    const ys = [];
+    for (let i = 0; i < n; i += 1) {
+      const ability = normal();
+      const x = gamma * ability + normal();
+      const y = beta * x + 1.2 * ability + normal();
+      xs.push(x);
+      ys.push(y);
+    }
+    const fit = olsFit(xs, ys);
+    trueEl.textContent = beta.toFixed(2);
+    olsEl.textContent = fit.b1.toFixed(2);
+    biasEl.textContent = (fit.b1 - beta).toFixed(2);
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const xMin = Math.min(...xs), xMax = Math.max(...xs), yMin = Math.min(...ys), yMax = Math.max(...ys);
+    const xScale = (x) => margin + ((x - xMin) / (xMax - xMin)) * (canvas.width - 2 * margin);
+    const yScale = (y) => canvas.height - margin - ((y - yMin) / (yMax - yMin)) * (canvas.height - 2 * margin);
+    ctx.fillStyle = "rgba(0, 99, 166, 0.25)";
+    xs.slice(0, 900).forEach((x, i) => {
+      ctx.beginPath();
+      ctx.arc(xScale(x), yScale(ys[i]), 2, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(xScale(xMin), yScale(fit.b0 + fit.b1 * xMin));
+    ctx.lineTo(xScale(xMax), yScale(fit.b0 + fit.b1 * xMax));
+    ctx.stroke();
+  }
+  selInput.addEventListener("input", render);
+  nInput.addEventListener("input", render);
+  button.addEventListener("click", () => {
+    seed += 1;
+    render();
+  });
+  render();
+}
+
+function initOlsSamplingDemo() {
+  const root = document.getElementById("ols-sampling-demo");
+  if (!root) return;
+  const nInput = document.getElementById("ols-sampling-n");
+  const repsInput = document.getElementById("ols-sampling-reps");
+  const button = document.getElementById("ols-sampling-resimulate");
+  const canvas = document.getElementById("ols-sampling-canvas");
+  const trueEl = document.getElementById("ols-sampling-true");
+  const meanEl = document.getElementById("ols-sampling-mean");
+  const sdEl = document.getElementById("ols-sampling-sd");
+  let seed = 920;
+
+  function render() {
+    const normal = normalGenerator(seed);
+    const n = Number(nInput.value);
+    const reps = Number(repsInput.value);
+    const beta = 1.5;
+    const slopes = [];
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const xScale = (x) => margin + ((x + 2.5) / 5) * (canvas.width - 2 * margin);
+    const yScale = (y) => canvas.height - margin - ((y + 4) / 8) * (canvas.height - 2 * margin);
+    for (let r = 0; r < reps; r += 1) {
+      const xs = [];
+      const ys = [];
+      for (let i = 0; i < n; i += 1) {
+        const x = normal();
+        const y = 0.5 + beta * x + normal();
+        xs.push(x);
+        ys.push(y);
+      }
+      const fit = olsFit(xs, ys);
+      slopes.push(fit.b1);
+      if (r < 160) {
+        ctx.strokeStyle = "rgba(0, 99, 166, 0.08)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(xScale(-2.5), yScale(fit.b0 + fit.b1 * -2.5));
+        ctx.lineTo(xScale(2.5), yScale(fit.b0 + fit.b1 * 2.5));
+        ctx.stroke();
+      }
+    }
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(xScale(-2.5), yScale(0.5 + beta * -2.5));
+    ctx.lineTo(xScale(2.5), yScale(0.5 + beta * 2.5));
+    ctx.stroke();
+    trueEl.textContent = beta.toFixed(2);
+    meanEl.textContent = mean(slopes).toFixed(2);
+    sdEl.textContent = sd(slopes).toFixed(2);
+  }
+  nInput.addEventListener("input", render);
+  repsInput.addEventListener("input", render);
+  button.addEventListener("click", () => {
+    seed += 1;
+    render();
+  });
+  render();
+}

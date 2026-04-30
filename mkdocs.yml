@@ -52,6 +52,14 @@ nav:
           - 4. Conditional Distributions: modules/module 1/04-conditional-distributions.md
           - 5. Random Sampling and Convergence: modules/module 1/05-sampling-convergence.md
           - 6. Matrix Notation and Estimation: modules/module 1/06-estimation.md
+      - Module 2:
+          - Overview: modules/module 2/module2.md
+          - 1. Conditional Expectations and SLR: modules/module 2/01-conditional-expectations-slr.md
+          - 2. OLS Estimation: modules/module 2/02-ols-estimation.md
+          - 3. OLS Mechanics and Fit: modules/module 2/03-ols-mechanics-fit.md
+          - 4. Functional Forms and Dummies: modules/module 2/04-functional-forms-dummies.md
+          - 5. SLR Assumptions: modules/module 2/05-slr-assumptions.md
+          - 6. Unbiasedness, Variance, and Efficiency: modules/module 2/06-ols-properties.md
   - Guides:
       - First steps: guides/first-steps.md
       - Computing setup: guides/computing-setup.md

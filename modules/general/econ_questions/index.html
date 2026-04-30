@@ -1,0 +1,2846 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How modern econometrics connects economic theory, measurement, and causal evidence in labor and microeconomics.">
+      
+      
+      
+        <link rel="canonical" href="https://lorenzonavarini.github.io/intro_metrics_W2026/modules/general/econ_questions/">
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../../module%201/module1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/univie-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Five Big Questions in Empirical Economics - Introductory Econometrics (W2026)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/univie.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#five-big-questions-in-empirical-economics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Introductory Econometrics (W2026)" class="md-header__button md-logo" aria-label="Introductory Econometrics (W2026)" data-md-component="logo">
+      
+  <img src="../../../assets/images/univie-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introductory Econometrics (W2026)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Five Big Questions in Empirical Economics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzonavarini/intro_metrics_W2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzonavarini/intro_metrics_W2026
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Introductory Econometrics (W2026)" class="md-nav__button md-logo" aria-label="Introductory Econometrics (W2026)" data-md-component="logo">
+      
+  <img src="../../../assets/images/univie-logo.png" alt="logo">
+
+    </a>
+    Introductory Econometrics (W2026)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzonavarini/intro_metrics_W2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzonavarini/intro_metrics_W2026
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    General
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Five Big Questions in Empirical Economics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Five Big Questions in Empirical Economics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-the-return-to-human-capital-and-for-whom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is the return to human capital, and for whom?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What is the return to human capital, and for whom?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-who-benefits-from-public-programs-and-why-do-average-effects-mislead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Who benefits from public programs, and why do average effects mislead?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Who benefits from public programs, and why do average effects mislead?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-do-incentives-constraints-and-family-dynamics-shape-labor-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. How do incentives, constraints, and family dynamics shape labor supply?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. How do incentives, constraints, and family dynamics shape labor supply?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-are-labor-markets-competitive-and-how-much-do-firms-matter-for-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Are labor markets competitive, and how much do firms matter for inequality?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Are labor markets competitive, and how much do firms matter for inequality?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-do-migration-technology-and-skill-supply-reshape-wages-and-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How do migration, technology, and skill supply reshape wages and inequality?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How do migration, technology, and skill supply reshape wages and inequality?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/module1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/01-econometrics-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Econometrics and Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/02-data-causality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Data, Models, and Causality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/03-random-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Random Variables and Moments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/04-conditional-distributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Conditional Distributions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/05-sampling-convergence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Random Sampling and Convergence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/06-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Matrix Notation and Estimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/technical-01-panel-reshaping-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T1. Reshaping Panel Data in R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/technical-02-simulated-rct-r/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T2. Simulated RCT in R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/technical-03-lln/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T3. Law of Large Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/technical-04-clt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T4. Central Limit Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%201/technical-05-standard-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T5. Standard Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/module2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/01-conditional-expectations-slr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Conditional Expectations and SLR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/02-ols-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. OLS Estimation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/03-ols-mechanics-fit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. OLS Mechanics and Fit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/04-functional-forms-dummies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Functional Forms and Dummies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/05-slr-assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. SLR Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module%202/06-ols-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Unbiasedness, Variance, and Efficiency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/first-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/computing-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computing setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/reproducible-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reproducible workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    References
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/git-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git and GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/common-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-the-return-to-human-capital-and-for-whom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What is the return to human capital, and for whom?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What is the return to human capital, and for whom?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-who-benefits-from-public-programs-and-why-do-average-effects-mislead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Who benefits from public programs, and why do average effects mislead?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Who benefits from public programs, and why do average effects mislead?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-how-do-incentives-constraints-and-family-dynamics-shape-labor-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. How do incentives, constraints, and family dynamics shape labor supply?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. How do incentives, constraints, and family dynamics shape labor supply?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-are-labor-markets-competitive-and-how-much-do-firms-matter-for-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Are labor markets competitive, and how much do firms matter for inequality?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Are labor markets competitive, and how much do firms matter for inequality?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-do-migration-technology-and-skill-supply-reshape-wages-and-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How do migration, technology, and skill supply reshape wages and inequality?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How do migration, technology, and skill supply reshape wages and inequality?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-theoretical-framework_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A simple theoretical framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-measure_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we need to measure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-econometrics-helps_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How econometrics helps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-literature-suggests_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the literature suggests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-frontier_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open frontier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="five-big-questions-in-empirical-economics">Five Big Questions in Empirical Economics</h1>
+<p>Economics is most powerful when a theoretical question is translated into a measurable object and then disciplined by data. The five questions below are not meant to exhaust the field. They are a useful map of how modern empirical economics moves from simple models to credible estimates and then back to policy-relevant interpretation.</p>
+<p>Each question follows the same logic:</p>
+<ol>
+<li><strong>What is the economic problem?</strong></li>
+<li><strong>What is the minimal theory?</strong></li>
+<li><strong>What must be measured?</strong></li>
+<li><strong>Which econometric tools connect measures to causal objects?</strong></li>
+<li><strong>What have we learned, and what remains open?</strong></li>
+</ol>
+<hr />
+<h2 id="1-what-is-the-return-to-human-capital-and-for-whom">1. What is the return to human capital, and for whom?</h2>
+<h3 id="the-problem">The problem</h3>
+<p>From Smith to Becker and Mincer, economists have asked why people invest in education, training, health, and skills. The classical human-capital answer is that schooling raises productivity and therefore wages. The modern answer is more subtle: schooling may raise productivity, reveal ability, open future options, change preferences, improve health, and sort people into different occupations, firms, and social networks.</p>
+<p>The core empirical problem is that individuals <strong>choose</strong> their schooling. Those who obtain more education differ from those who do not, and the same degree may have different returns for different people.</p>
+<h3 id="a-simple-theoretical-framework">A simple theoretical framework</h3>
+<p>Start with a schooling choice model. Individual <span class="arithmatex">\(i\)</span> chooses schooling level <span class="arithmatex">\(s\)</span> to maximize expected lifetime utility:</p>
+<div class="arithmatex">\[
+V_i(s)=E_i\left[\sum_{t=0}^{T}\beta^t Y_{it}(s)\right]-C_i(s),
+\]</div>
+<p>where <span class="arithmatex">\(Y_{it}(s)\)</span> is earnings or utility at age <span class="arithmatex">\(t\)</span> if schooling level <span class="arithmatex">\(s\)</span> is chosen, and <span class="arithmatex">\(C_i(s)\)</span> includes tuition, foregone earnings, effort costs, psychic costs, and borrowing constraints.</p>
+<p>The empirical workhorse is the Mincer equation:</p>
+<div class="arithmatex">\[
+\log w_i=\alpha+\rho S_i+g(Exp_i)+X_i'\beta+u_i.
+\]</div>
+<p>But the parameter <span class="arithmatex">\(\rho\)</span> is causal only under strong conditions. A richer model allows individual-specific returns:</p>
+<div class="arithmatex">\[
+\log w_i(s)=\alpha_i+\rho_i s+g_i(Exp_i)+u_i(s),
+\]</div>
+<p>with schooling chosen partly because of <span class="arithmatex">\(\alpha_i\)</span>, <span class="arithmatex">\(\rho_i\)</span>, costs, and expectations. This creates <strong>ability bias</strong>, <strong>selection on gains</strong>, and <strong>dynamic continuation values</strong>: completing one stage of education changes the feasible set of future choices.</p>
+<h3 id="what-we-need-to-measure">What we need to measure</h3>
+<p>A credible empirical design needs data on:</p>
+<ul>
+<li>schooling quantity: years, credentials, dropout, completion;</li>
+<li>schooling quality: institution, track, major, peer group, teacher/school value added;</li>
+<li>costs: tuition, grants, loans, foregone earnings, distance, admissions constraints;</li>
+<li>outcomes: wages, employment, occupations, health, smoking, family formation, crime, nonmarket benefits;</li>
+<li>pre-treatment characteristics: cognitive skills, noncognitive skills, family background, prior grades, location;</li>
+<li>dynamic states: earlier choices that determine later options.</li>
+</ul>
+<h3 id="how-econometrics-helps">How econometrics helps</h3>
+<p>Different econometric strategies answer different versions of the question.</p>
+<p><strong>Descriptive Mincer regressions</strong> estimate conditional wage gaps. They are useful summaries but not automatically causal.</p>
+<p><strong>Instrumental variables and regression discontinuity</strong> exploit variation in schooling caused by compulsory-schooling laws, distance to college, admissions cutoffs, school construction, financial aid, or lotteries. These designs often estimate local effects for people shifted by the instrument.</p>
+<p><strong>Generalized Roy and marginal treatment effect models</strong> ask how returns vary with the latent cost or resistance to schooling. These models distinguish average treatment effects, treatment on the treated, and returns for marginal students.</p>
+<p><strong>Dynamic discrete choice and dynamic treatment-effect models</strong> explicitly represent sequential choices: high school track, college entry, major, persistence, graduation, labor-market entry. They are useful when a policy changes not only one schooling decision but an entire educational path.</p>
+<h3 id="what-the-literature-suggests">What the literature suggests</h3>
+<p>The main lesson is not simply “education pays.” Rather:</p>
+<ul>
+<li>average returns are often positive;</li>
+<li>returns vary by ability, background, degree, institution, field, and outside option;</li>
+<li>some students have low or even negative financial returns to some degrees;</li>
+<li>continuation values matter because one educational step opens future options;</li>
+<li>policies aimed at marginal students can have different returns from average returns.</li>
+</ul>
+<h3 id="open-frontier">Open frontier</h3>
+<p>The next frontier is to estimate returns to <strong>educational sequences</strong>, not isolated credentials: primary skills → high school track → college major → occupation → firm. This requires linked administrative data, measurement of skills, and models that allow dynamic complementarities.</p>
+<hr />
+<h2 id="2-who-benefits-from-public-programs-and-why-do-average-effects-mislead">2. Who benefits from public programs, and why do average effects mislead?</h2>
+<h3 id="the-problem_1">The problem</h3>
+<p>Governments run programs in education, training, health, childcare, housing, and employment. The central policy question is not only whether a program works on average, but <strong>for whom</strong>, <strong>relative to what counterfactual</strong>, and <strong>at what scale</strong>.</p>
+<p>A small experimental effect may hide large gains for a subgroup. A large effect for current participants may not generalize to nonparticipants. A program may appear ineffective if the control group receives a close substitute.</p>
+<h3 id="a-simple-theoretical-framework_1">A simple theoretical framework</h3>
+<p>Let <span class="arithmatex">\(D_i\in\{0,1\}\)</span> denote participation in a program. Potential outcomes are <span class="arithmatex">\(Y_i(1)\)</span> and <span class="arithmatex">\(Y_i(0)\)</span>. The individual treatment effect is:</p>
+<div class="arithmatex">\[
+\Delta_i=Y_i(1)-Y_i(0).
+\]</div>
+<p>Participation is not random. In a selection model:</p>
+<div class="arithmatex">\[
+D_i=1\{\mu_D(Z_i,X_i)-U_{Di}\geq 0\},
+\]</div>
+<p>where <span class="arithmatex">\(Z_i\)</span> shifts access or incentives, <span class="arithmatex">\(X_i\)</span> are observed characteristics, and <span class="arithmatex">\(U_{Di}\)</span> captures unobserved resistance to participation. If <span class="arithmatex">\(\Delta_i\)</span> is correlated with <span class="arithmatex">\(U_{Di}\)</span>, then people select into treatment partly based on gains or costs.</p>
+<h3 id="what-we-need-to-measure_1">What we need to measure</h3>
+<p>A serious evaluation requires:</p>
+<ul>
+<li>program offers, eligibility, assignment, take-up, intensity, and duration;</li>
+<li>counterfactual alternatives: home care, other preschool, other schools, private providers, informal care;</li>
+<li>outcomes over time: test scores, earnings, health, crime, welfare use, taxes paid;</li>
+<li>costs: government cost, private cost, fiscal externalities, substitution from other public programs;</li>
+<li>margins of treatment: who is induced to participate by a given policy change.</li>
+</ul>
+<h3 id="how-econometrics-helps_1">How econometrics helps</h3>
+<p><strong>Randomized controlled trials</strong> identify internally valid effects for the experimental population, but interpretation depends on compliance and substitutes.</p>
+<p><strong>Instrumental variables</strong> identify local average treatment effects for compliers shifted by a specific instrument. This is powerful but instrument-specific.</p>
+<p><strong>Control-function and selection models</strong> use choice equations to correct selection and recover richer treatment-effect objects.</p>
+<p><strong>Marginal treatment effects</strong> estimate effects along the participation margin. They allow researchers to construct policy-relevant treatment effects for alternative expansions or targeting rules.</p>
+<p><strong>Multiple-treatment methods</strong> are needed when people choose among unordered alternatives: different schools, majors, programs, or care arrangements. In these settings, the relevant counterfactual is not “no treatment” but the next-best alternative.</p>
+<h3 id="what-the-literature-suggests_1">What the literature suggests</h3>
+<p>The main lesson is that “the effect of a program” is not a single universal number.</p>
+<ul>
+<li>Experiments estimate effects for the group moved by the experiment.</li>
+<li>Different instruments can identify different margins.</li>
+<li>Program substitutes can change both benefits and costs.</li>
+<li>Targeting can matter as much as program quality.</li>
+<li>Policy evaluation must distinguish internal validity from external validity.</li>
+</ul>
+<h3 id="open-frontier_1">Open frontier</h3>
+<p>The frontier is to combine credible research designs with models rich enough to evaluate new policies, not only policies already observed. This means estimating effects by margin, modeling substitutes, and incorporating costs and equilibrium responses.</p>
+<hr />
+<h2 id="3-how-do-incentives-constraints-and-family-dynamics-shape-labor-supply">3. How do incentives, constraints, and family dynamics shape labor supply?</h2>
+<h3 id="the-problem_2">The problem</h3>
+<p>Labor supply is where microeconomic theory meets tax policy, family economics, and inequality. How much do people work when wages, taxes, transfers, childcare costs, retirement incentives, or family circumstances change?</p>
+<p>The challenge is that labor supply is both a continuous and discrete decision. People choose whether to work, how many hours to work, whether to enter welfare programs, when to retire, and how to divide work within the household.</p>
+<h3 id="a-simple-theoretical-framework_2">A simple theoretical framework</h3>
+<p>In a static model, an individual chooses consumption <span class="arithmatex">\(c\)</span> and hours <span class="arithmatex">\(h\)</span>:</p>
+<div class="arithmatex">\[
+\max_{h\geq 0} U(c, T-h; \theta_i)
+\]</div>
+<p>subject to</p>
+<div class="arithmatex">\[
+c = wh + y - T(wh,y),
+\]</div>
+<p>where <span class="arithmatex">\(w\)</span> is the wage, <span class="arithmatex">\(y\)</span> is nonlabor income, <span class="arithmatex">\(T(\cdot)\)</span> is the tax-transfer schedule, and <span class="arithmatex">\(\theta_i\)</span> captures preferences and constraints.</p>
+<p>With fixed costs of work <span class="arithmatex">\(F_i\)</span>, participation becomes:</p>
+<div class="arithmatex">\[
+D_i=1\{V_i^{work}(w,y,T)-F_i \geq V_i^{nonwork}(y,T)\}.
+\]</div>
+<p>In a dynamic model, work today affects experience, future wages, savings, eligibility, and retirement options:</p>
+<div class="arithmatex">\[
+V_t(a,e)=\max_{h,c}\{U(c,T-h)+\beta E[V_{t+1}(a',e')|h,c]\}.
+\]</div>
+<h3 id="what-we-need-to-measure_2">What we need to measure</h3>
+<p>A labor-supply study needs:</p>
+<ul>
+<li>hours, participation, employment spells, retirement, job search;</li>
+<li>wages, including potential wages for nonworkers;</li>
+<li>taxes, transfers, benefits, childcare costs, pension rules, health insurance;</li>
+<li>family structure, spouse earnings, children, wealth and savings;</li>
+<li>constraints: fixed costs, hours restrictions, welfare eligibility, nonlinear budget sets;</li>
+<li>timing: whether the response is immediate, delayed, or lifecycle-based.</li>
+</ul>
+<h3 id="how-econometrics-helps_2">How econometrics helps</h3>
+<p><strong>Structural labor-supply models</strong> simulate behavior under nonlinear tax and transfer schedules. They are useful for counterfactual tax reform.</p>
+<p><strong>Difference-in-differences and natural experiments</strong> evaluate reforms using treated and comparison groups.</p>
+<p><strong>Bunching designs</strong> use excess mass near kinks or notches in tax schedules to infer behavioral elasticities.</p>
+<p><strong>Panel data methods</strong> control for persistent individual heterogeneity.</p>
+<p><strong>Dynamic discrete choice models</strong> handle lifecycle labor supply, retirement, savings, and human-capital accumulation.</p>
+<h3 id="what-the-literature-suggests_2">What the literature suggests</h3>
+<p>Modern labor-supply research emphasizes that:</p>
+<ul>
+<li>extensive-margin responses often matter more than intensive-margin hours responses;</li>
+<li>missing wages and nonparticipation are central identification problems;</li>
+<li>nonlinear tax and transfer schedules are not details: they define the actual choice set;</li>
+<li>family labor supply requires modeling within-household allocation;</li>
+<li>dynamic responses may differ from short-run responses.</li>
+</ul>
+<h3 id="open-frontier_2">Open frontier</h3>
+<p>The frontier is to connect labor supply to employer behavior and job characteristics. Workers do not choose hours from an abstract budget set alone; they choose jobs with schedules, amenities, remote-work possibilities, childcare compatibility, and career consequences.</p>
+<hr />
+<h2 id="4-are-labor-markets-competitive-and-how-much-do-firms-matter-for-inequality">4. Are labor markets competitive, and how much do firms matter for inequality?</h2>
+<h3 id="the-problem_3">The problem</h3>
+<p>Classical competitive models treat wages as equal to marginal productivity. Modern labor economics increasingly asks whether firms have wage-setting power and whether workers with similar skills earn different wages because they work at different firms.</p>
+<p>This question matters for minimum wages, antitrust, noncompete agreements, unions, mergers, wage transparency, discrimination, and regional inequality.</p>
+<h3 id="a-simple-theoretical-framework_3">A simple theoretical framework</h3>
+<p>In a competitive labor market:</p>
+<div class="arithmatex">\[
+w = MRPL.
+\]</div>
+<p>In a monopsonistic labor market, a firm faces an upward-sloping labor supply curve <span class="arithmatex">\(L(w)\)</span>. Profit is:</p>
+<div class="arithmatex">\[
+\pi = R(L)-w(L)L.
+\]</div>
+<p>The first-order condition implies a markdown:</p>
+<div class="arithmatex">\[
+w = \frac{MRPL}{1+1/\varepsilon_L},
+\]</div>
+<p>where <span class="arithmatex">\(\varepsilon_L\)</span> is the labor supply elasticity to the firm. Lower <span class="arithmatex">\(\varepsilon_L\)</span> means more wage-setting power.</p>
+<p>A complementary worker-firm model decomposes wages as:</p>
+<div class="arithmatex">\[
+w_{it}=\alpha_i+\psi_{j(i,t)}+X_{it}'\beta+\varepsilon_{it},
+\]</div>
+<p>where <span class="arithmatex">\(\alpha_i\)</span> is worker skill and <span class="arithmatex">\(\psi_j\)</span> is the firm wage premium.</p>
+<h3 id="what-we-need-to-measure_3">What we need to measure</h3>
+<p>A modern analysis needs:</p>
+<ul>
+<li>matched employer-employee data;</li>
+<li>wages, hours, tenure, mobility, layoffs, occupations;</li>
+<li>firm productivity, profits, revenue, vacancies, concentration, mergers;</li>
+<li>job amenities, commute time, remote work, schedule flexibility, risk;</li>
+<li>outside options and job-search frictions;</li>
+<li>institutions: unions, minimum wages, noncompetes, licensing, wage transparency.</li>
+</ul>
+<h3 id="how-econometrics-helps_3">How econometrics helps</h3>
+<p><strong>Two-way fixed effects and mover designs</strong> estimate firm wage premia from workers moving across firms.</p>
+<p><strong>Event studies</strong> analyze wage changes after mergers, plant closures, minimum-wage changes, or changes in noncompete enforceability.</p>
+<p><strong>Labor-supply-to-the-firm estimation</strong> estimates how separations, applications, or employment respond to wages.</p>
+<p><strong>Search and matching models</strong> connect wage dispersion, mobility, vacancy posting, and bargaining.</p>
+<p><strong>Empirical Bayes methods</strong> improve estimates of many firm-, school-, teacher-, judge-, or hospital-specific effects by shrinking noisy unit estimates toward an estimated distribution.</p>
+<h3 id="what-the-literature-suggests_3">What the literature suggests</h3>
+<p>The main shift is from “the labor market” to many imperfectly connected markets.</p>
+<ul>
+<li>Firms matter for wages, even conditional on worker characteristics.</li>
+<li>Workers face frictions and heterogeneous preferences over jobs.</li>
+<li>Concentration, noncompetes, and mobility barriers can create wage-setting power.</li>
+<li>Minimum wages can raise wages with limited employment losses in monopsonistic settings.</li>
+<li>Antitrust and labor-market regulation increasingly require direct measurement of employer power.</li>
+</ul>
+<h3 id="open-frontier_3">Open frontier</h3>
+<p>The frontier is to measure not only wage markdowns but <strong>total job-quality markdowns</strong>: wages, schedules, risk, dignity, flexibility, and career progression. A job can be exploitative through low pay, poor amenities, or both.</p>
+<hr />
+<h2 id="5-how-do-migration-technology-and-skill-supply-reshape-wages-and-inequality">5. How do migration, technology, and skill supply reshape wages and inequality?</h2>
+<h3 id="the-problem_4">The problem</h3>
+<p>Labor markets are affected by aggregate shocks: immigration, college expansion, automation, trade, demographic change, and technological innovation. These shocks change the supply of skills, the demand for tasks, and the incentives of firms to adopt technologies.</p>
+<p>The central question is not merely whether one group’s wages fall or rise after a shock. It is how the economy adjusts: through wages, employment, migration, capital, technology, occupational upgrading, firm entry, product prices, and industrial composition.</p>
+<h3 id="a-simple-theoretical-framework_4">A simple theoretical framework</h3>
+<p>A canonical skill model writes output as a CES aggregate of high- and low-skill labor:</p>
+<div class="arithmatex">\[
+Y=\left[(A_H H)^{\frac{\sigma-1}{\sigma}}+(A_L L)^{\frac{\sigma-1}{\sigma}}\right]^{\frac{\sigma}{\sigma-1}},
+\]</div>
+<p>where <span class="arithmatex">\(H\)</span> and <span class="arithmatex">\(L\)</span> are skill supplies, <span class="arithmatex">\(A_H\)</span> and <span class="arithmatex">\(A_L\)</span> are skill-augmenting technologies, and <span class="arithmatex">\(\sigma\)</span> is the elasticity of substitution.</p>
+<p>The skill premium can be written approximately as:</p>
+<div class="arithmatex">\[
+\log\left(\frac{w_H}{w_L}\right)
+= \text{relative demand} - \frac{1}{\sigma}\log\left(\frac{H}{L}\right).
+\]</div>
+<p>A simple supply shock should reduce the relative wage of the affected skill group. But if technology responds endogenously, <span class="arithmatex">\(A_H\)</span> or <span class="arithmatex">\(A_L\)</span> may shift, so wages and supplies can rise together.</p>
+<h3 id="what-we-need-to-measure_4">What we need to measure</h3>
+<p>A credible empirical analysis needs:</p>
+<ul>
+<li>local and national skill supplies;</li>
+<li>migration flows and immigrant skill classifications;</li>
+<li>wages and employment by skill, occupation, region, firm, and cohort;</li>
+<li>capital, output, productivity, R&amp;D, patents, technology adoption;</li>
+<li>tasks and occupational content;</li>
+<li>product prices and industry composition;</li>
+<li>worker mobility and native responses.</li>
+</ul>
+<h3 id="how-econometrics-helps_4">How econometrics helps</h3>
+<p><strong>Spatial designs</strong> compare local labor markets receiving different shocks.</p>
+<p><strong>Shift-share instruments</strong> use historical settlement patterns or industry exposure to predict local shocks, while requiring careful attention to exogeneity and inference.</p>
+<p><strong>National skill-cell approaches</strong> compare wage changes across education-experience groups.</p>
+<p><strong>Event studies and difference-in-differences</strong> exploit reforms, college openings, refugee dispersal, or technology shocks.</p>
+<p><strong>Production-function estimation</strong> measures whether productivity or marginal products change after skill-supply shocks.</p>
+<p><strong>Structural and general-equilibrium models</strong> translate reduced-form estimates into aggregate effects and counterfactual policy simulations.</p>
+<h3 id="what-the-literature-suggests_4">What the literature suggests</h3>
+<p>The key lesson is that labor-market shocks trigger adjustment.</p>
+<ul>
+<li>Local estimates need not equal aggregate effects because workers, firms, and capital move.</li>
+<li>Immigration effects depend on substitution between immigrant and native workers, task allocation, and regional adjustment.</li>
+<li>Skill-supply expansions can induce skill-complementary technical change.</li>
+<li>Technology affects labor demand, but workers and firms respond by changing tasks, training, and organization.</li>
+<li>Reduced-form evidence is most informative when mapped to an explicit model of adjustment.</li>
+</ul>
+<h3 id="open-frontier_4">Open frontier</h3>
+<p>The frontier is to integrate micro data on workers and firms with macro models of adjustment. We need estimates that distinguish partial-equilibrium effects from total effects, and short-run disruption from long-run reallocation.</p>
+<hr />
+<h1 id="a-practical-econometric-template">A practical econometric template</h1>
+<p>For any empirical question, the workflow can be written as:</p>
+<h2 id="1-state-the-economic-object">1. State the economic object</h2>
+<p>Examples:</p>
+<ul>
+<li>return to an extra year of schooling;</li>
+<li>effect of a program for marginal participants;</li>
+<li>labor-supply elasticity at a tax kink;</li>
+<li>firm wage markdown;</li>
+<li>aggregate wage effect of immigration.</li>
+</ul>
+<h2 id="2-write-the-minimal-model">2. Write the minimal model</h2>
+<p>The model should clarify:</p>
+<ul>
+<li>the choice set;</li>
+<li>the constraints;</li>
+<li>the source of heterogeneity;</li>
+<li>the equilibrium or counterfactual of interest;</li>
+<li>which parameter is policy-relevant.</li>
+</ul>
+<h2 id="3-define-the-measurement-system">3. Define the measurement system</h2>
+<p>Ask:</p>
+<ul>
+<li>What are the treatment, outcome, and state variables?</li>
+<li>Which variables are measured with error?</li>
+<li>Which counterfactual alternatives are observed or inferable?</li>
+<li>What is the unit of analysis: individual, family, firm, school, region, market?</li>
+</ul>
+<h2 id="4-choose-the-identifying-variation">4. Choose the identifying variation</h2>
+<p>Possible sources:</p>
+<ul>
+<li>randomized assignment;</li>
+<li>eligibility thresholds;</li>
+<li>admissions cutoffs;</li>
+<li>policy reforms;</li>
+<li>geographic rollout;</li>
+<li>shift-share exposure;</li>
+<li>distance or access shifters;</li>
+<li>panel movers;</li>
+<li>administrative rules.</li>
+</ul>
+<h2 id="5-interpret-the-estimand">5. Interpret the estimand</h2>
+<p>Do not ask only: “Is the estimate causal?” Ask also:</p>
+<ul>
+<li>causal for whom?</li>
+<li>relative to which alternative?</li>
+<li>at which margin?</li>
+<li>under which equilibrium environment?</li>
+<li>valid for which policy counterfactual?</li>
+</ul>
+<h2 id="6-connect-results-back-to-theory">6. Connect results back to theory</h2>
+<p>The final product is not a coefficient. It is an answer to a model-based question.</p>
+<hr />
+<h1 id="suggested-reading-map">Suggested reading map</h1>
+<h2 id="human-capital-and-education">Human capital and education</h2>
+<ul>
+<li>Becker, G. S. (1964). <em>Human Capital</em>.</li>
+<li>Mincer, J. (1974). <em>Schooling, Experience, and Earnings</em>.</li>
+<li>Card, D. (1999). “The Causal Effect of Education on Earnings.”</li>
+<li>Heckman, J. J., Humphries, J. E., and Veramendi, G. (2018). “Returns to Education: The Causal Effects of Education on Earnings, Health, and Smoking.”</li>
+<li>Rodríguez, J., Urzúa, S., and Reyes, L. (2016). “Heterogeneous Economic Returns to Post-Secondary Degrees: Evidence from Chile.”</li>
+<li>Mountjoy, J. (2022). “Community Colleges and Upward Mobility.”</li>
+<li>Humphries, J. E., Joensen, J. S., and Veramendi, G. (2023). “Complementarities in High School and College Investments.”</li>
+</ul>
+<h2 id="program-evaluation-and-selection">Program evaluation and selection</h2>
+<ul>
+<li>Roy, A. D. (1951). “Some Thoughts on the Distribution of Earnings.”</li>
+<li>Heckman, J. J. (1979). “Sample Selection Bias as a Specification Error.”</li>
+<li>Heckman, J. J., and Vytlacil, E. (2005). “Structural Equations, Treatment Effects, and Econometric Policy Evaluation.”</li>
+<li>Kline, P., and Walters, C. (2016). “Evaluating Public Programs with Close Substitutes: The Case of Head Start.”</li>
+<li>Cornelissen, T., Dustmann, C., Raute, A., and Schönberg, U. (2018). “Who Benefits from Universal Child Care?”</li>
+<li>Mogstad, M., and Torgovitsky, A. (2024). “Instrumental Variables with Unobserved Heterogeneity in Treatment Effects.”</li>
+</ul>
+<h2 id="labor-supply-and-dynamic-choice">Labor supply and dynamic choice</h2>
+<ul>
+<li>Blundell, R., MaCurdy, T., and Meghir, C. (2007). “Labor Supply Models: Unobserved Heterogeneity, Nonparticipation and Dynamics.”</li>
+<li>Keane, M. P., Todd, P. E., and Wolpin, K. I. (2011). “The Structural Estimation of Behavioral Models: Discrete Choice Dynamic Programming Methods and Applications.”</li>
+<li>Heckman, J. J., and Navarro, S. (2007). “Dynamic Discrete Choice and Dynamic Treatment Effects.”</li>
+</ul>
+<h2 id="firms-monopsony-and-value-added">Firms, monopsony, and value added</h2>
+<ul>
+<li>Robinson, J. (1933). <em>The Economics of Imperfect Competition</em>.</li>
+<li>Manning, A. (2003). <em>Monopsony in Motion</em>.</li>
+<li>Abowd, J. M., Kramarz, F., and Margolis, D. N. (1999). “High Wage Workers and High Wage Firms.”</li>
+<li>Card, D., Heining, J., and Kline, P. (2013). “Workplace Heterogeneity and the Rise of West German Wage Inequality.”</li>
+<li>Azar, J., and Marinescu, I. (2024). “Monopsony Power in the Labor Market: From Theory to Policy.”</li>
+<li>Walters, C. R. (2024). “Empirical Bayes Methods in Labor Economics.”</li>
+</ul>
+<h2 id="migration-technology-and-macro-labor-adjustment">Migration, technology, and macro-labor adjustment</h2>
+<ul>
+<li>Katz, L. F., and Murphy, K. M. (1992). “Changes in Relative Wages, 1963–1987.”</li>
+<li>Acemoglu, D. (1998). “Why Do New Technologies Complement Skills?”</li>
+<li>Autor, D., Katz, L., and Kearney, M. (2008). “Trends in U.S. Wage Inequality.”</li>
+<li>Card, D. (1990). “The Impact of the Mariel Boatlift on the Miami Labor Market.”</li>
+<li>Carneiro, P., Liu, K., and Salvanes, K. G. (2023). “The Supply of Skill and Endogenous Technical Change.”</li>
+<li>Dustmann, C., and Schönberg, U. (2025). “Linking Empirical Evidence to Theory: A Framework for Understanding Immigration’s Labor Market Effects.”</li>
+</ul>
+<hr />
+<h1 id="closing-idea">Closing idea</h1>
+<p>The common thread across these questions is <strong>selection under constraints</strong>. People select into schooling, work, programs, migration, firms, and occupations. Firms select technologies, locations, wage policies, and workers. Econometrics helps when it makes this selection explicit: what choices are made, what alternatives are available, what is observed, what is missing, and which counterfactual is being estimated.</p>
+<p>A good empirical paper therefore does not begin with a regression. It begins with a question: <strong>what economic object would change our understanding of behavior or policy if we could measure it well?</strong></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/module1.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

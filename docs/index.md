@@ -11,6 +11,35 @@
 
 Welcome to the course website for Introductory Econometrics (W2026).
 
+## Course description
+
+The course provides an introduction to the most common statistical methods that are used in modern economics. In particular, the course will introduce students to the concept of linear regression analysis discussing how to set up and estimate linear regression models and conduct statistical inference with them. In doing so, the course will provide an understanding of causal inference and, more generally, guidelines for interpreting empirical regression results and the corresponding hypothesis tests. The course will also treat implementation issues related to regression analysis, such as misspecification or omitted variables. Empirical applications in Stata and R illustrate the methods.
+
+## Details
+
+Instructor: [Lorenzo Navarini](https://www.lorenzonavarini.com/), [lorenzo.navarini@univie.ac.at](mailto:lorenzo.navarini@univie.ac.at)
+
+Office hours (05.612) appointment booking: Monday, 15.30, by appointment 
+
+Teaching Assistant: [TBD]()
+
+### Textbooks
+
+Useful textbooks:
+
+- J. Wooldridge (2019), 7th edition: Introductory Econometrics, Cengage Learning.
+- J. Stock and M.Watson (2019): Introduction to Econometrics, Pearson.
+- J. Angrist and S. Pischke (2008): Mostly Harmless Econometrics, Princeton Univ. Press.
+
+
+### Coding
+
+- R
+- STATA
+- Python
+- Julia
+- MATLAB
+
 ## Course Goals
 
 The course emphasizes three dimensions:

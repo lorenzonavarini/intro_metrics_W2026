@@ -52,6 +52,12 @@ nav:
           - 4. Conditional Distributions: modules/module 1/04-conditional-distributions.md
           - 5. Random Sampling and Convergence: modules/module 1/05-sampling-convergence.md
           - 6. Matrix Notation and Estimation: modules/module 1/06-estimation.md
+          - Technical:
+              - T1. Reshaping Panel Data in R: modules/module 1/technical-01-panel-reshaping-r.md
+              - T2. Simulated RCT in R: modules/module 1/technical-02-simulated-rct-r.md
+              - T3. Law of Large Numbers: modules/module 1/technical-03-lln.md
+              - T4. Central Limit Theorem: modules/module 1/technical-04-clt.md
+              - T5. Standard Errors: modules/module 1/technical-05-standard-errors.md
       - Module 2:
           - Overview: modules/module 2/module2.md
           - 1. Conditional Expectations and SLR: modules/module 2/01-conditional-expectations-slr.md

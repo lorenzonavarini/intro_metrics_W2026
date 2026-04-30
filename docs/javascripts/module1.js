@@ -300,6 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initFunctionalFormDemo();
   initExogeneityDemo();
   initOlsSamplingDemo();
+  initLlnDemo();
+  initCltDemo();
+  initStandardErrorDemo();
 });
 
 function olsFit(xs, ys) {
@@ -622,6 +625,190 @@ function initOlsSamplingDemo() {
   }
   nInput.addEventListener("input", render);
   repsInput.addEventListener("input", render);
+  button.addEventListener("click", () => {
+    seed += 1;
+    render();
+  });
+  render();
+}
+
+function histogram(ctx, values, xMin, xMax, bins, margin, canvas, color) {
+  const counts = Array(bins).fill(0);
+  values.forEach((x) => {
+    const idx = Math.max(0, Math.min(bins - 1, Math.floor(((x - xMin) / (xMax - xMin)) * bins)));
+    counts[idx] += 1;
+  });
+  const maxCount = Math.max(...counts);
+  const plotW = canvas.width - 2 * margin;
+  const plotH = canvas.height - 2 * margin;
+  counts.forEach((count, i) => {
+    const barW = plotW / bins - 2;
+    const barH = (count / maxCount) * plotH;
+    ctx.fillStyle = color;
+    ctx.fillRect(margin + i * (plotW / bins), canvas.height - margin - barH, barW, barH);
+  });
+}
+
+function initLlnDemo() {
+  const root = document.getElementById("lln-demo");
+  if (!root) return;
+  const nInput = document.getElementById("lln-n");
+  const distInput = document.getElementById("lln-dist");
+  const button = document.getElementById("lln-resimulate");
+  const canvas = document.getElementById("lln-canvas");
+  const popEl = document.getElementById("lln-popmean");
+  const finalEl = document.getElementById("lln-finalmean");
+  const errorEl = document.getElementById("lln-error");
+  let seed = 1300;
+
+  function drawValue(normal, random, dist) {
+    if (dist === "normal") return 2 + normal();
+    if (dist === "lognormal") return Math.exp(0.5 * normal());
+    return random() < 0.35 ? 1 : 0;
+  }
+  function popMean(dist) {
+    if (dist === "normal") return 2;
+    if (dist === "lognormal") return Math.exp(0.5 ** 2 / 2);
+    return 0.35;
+  }
+  function render() {
+    const n = Number(nInput.value);
+    const dist = distInput.value;
+    const normal = normalGenerator(seed);
+    const random = seededRandom(seed + 77);
+    const running = [];
+    let total = 0;
+    for (let i = 1; i <= n; i += 1) {
+      total += drawValue(normal, random, dist);
+      running.push(total / i);
+    }
+    const mu = popMean(dist);
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const yMin = Math.min(mu, ...running) - 0.25;
+    const yMax = Math.max(mu, ...running) + 0.25;
+    const xScale = (i) => margin + (i / (n - 1)) * (canvas.width - 2 * margin);
+    const yScale = (y) => canvas.height - margin - ((y - yMin) / (yMax - yMin)) * (canvas.height - 2 * margin);
+    ctx.strokeStyle = "#0063a6";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    running.forEach((m, i) => {
+      if (i === 0) ctx.moveTo(xScale(i), yScale(m));
+      else ctx.lineTo(xScale(i), yScale(m));
+    });
+    ctx.stroke();
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(margin, yScale(mu));
+    ctx.lineTo(canvas.width - margin, yScale(mu));
+    ctx.stroke();
+    popEl.textContent = mu.toFixed(3);
+    finalEl.textContent = running[running.length - 1].toFixed(3);
+    errorEl.textContent = Math.abs(running[running.length - 1] - mu).toFixed(3);
+  }
+  nInput.addEventListener("input", render);
+  distInput.addEventListener("change", render);
+  button.addEventListener("click", () => {
+    seed += 1;
+    render();
+  });
+  render();
+}
+
+function initCltDemo() {
+  const root = document.getElementById("clt-demo");
+  if (!root) return;
+  const nInput = document.getElementById("clt-n");
+  const repsInput = document.getElementById("clt-reps");
+  const button = document.getElementById("clt-resimulate");
+  const canvas = document.getElementById("clt-canvas");
+  const meanEl = document.getElementById("clt-mean");
+  const sdEl = document.getElementById("clt-sd");
+  const theoryEl = document.getElementById("clt-theory");
+  let seed = 1500;
+
+  function render() {
+    const n = Number(nInput.value);
+    const reps = Number(repsInput.value);
+    const random = seededRandom(seed);
+    const sampleMeans = [];
+    for (let r = 0; r < reps; r += 1) {
+      let total = 0;
+      for (let i = 0; i < n; i += 1) total += -Math.log(Math.max(random(), 1e-12));
+      sampleMeans.push(total / n);
+    }
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const xMin = Math.min(...sampleMeans);
+    const xMax = Math.max(...sampleMeans);
+    histogram(ctx, sampleMeans, xMin, xMax, 32, margin, canvas, "#0063a6");
+    const mu = 1;
+    const xMu = margin + ((mu - xMin) / (xMax - xMin)) * (canvas.width - 2 * margin);
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xMu, margin);
+    ctx.lineTo(xMu, canvas.height - margin);
+    ctx.stroke();
+    meanEl.textContent = mean(sampleMeans).toFixed(3);
+    sdEl.textContent = sd(sampleMeans).toFixed(3);
+    theoryEl.textContent = (1 / Math.sqrt(n)).toFixed(3);
+  }
+  nInput.addEventListener("input", render);
+  repsInput.addEventListener("input", render);
+  button.addEventListener("click", () => {
+    seed += 1;
+    render();
+  });
+  render();
+}
+
+function initStandardErrorDemo() {
+  const root = document.getElementById("se-demo");
+  if (!root) return;
+  const nInput = document.getElementById("se-n");
+  const sigmaInput = document.getElementById("se-sigma");
+  const button = document.getElementById("se-resimulate");
+  const canvas = document.getElementById("se-canvas");
+  const empiricalEl = document.getElementById("se-empirical");
+  const theoryEl = document.getElementById("se-theory");
+  const oneEl = document.getElementById("se-one");
+  let seed = 1700;
+
+  function render() {
+    const n = Number(nInput.value);
+    const sigma = Number(sigmaInput.value) / 50;
+    const mu = 10;
+    const reps = 900;
+    const normal = normalGenerator(seed);
+    const means = [];
+    for (let r = 0; r < reps; r += 1) {
+      let total = 0;
+      for (let i = 0; i < n; i += 1) total += mu + sigma * normal();
+      means.push(total / n);
+    }
+    const ctx = clearCanvas(canvas);
+    const margin = 42;
+    drawAxes(ctx, canvas.width, canvas.height, margin);
+    const xMin = Math.min(...means);
+    const xMax = Math.max(...means);
+    histogram(ctx, means, xMin, xMax, 30, margin, canvas, "#0063a6");
+    const xMu = margin + ((mu - xMin) / (xMax - xMin)) * (canvas.width - 2 * margin);
+    ctx.strokeStyle = "#b91c1c";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xMu, margin);
+    ctx.lineTo(xMu, canvas.height - margin);
+    ctx.stroke();
+    empiricalEl.textContent = sd(means).toFixed(3);
+    theoryEl.textContent = (sigma / Math.sqrt(n)).toFixed(3);
+    oneEl.textContent = means[0].toFixed(3);
+  }
+  nInput.addEventListener("input", render);
+  sigmaInput.addEventListener("input", render);
   button.addEventListener("click", () => {
     seed += 1;
     render();

@@ -1,0 +1,40 @@
+site_name: Intro Metrics W2026
+site_description: Course materials, guides, and references for Intro Metrics W2026.
+site_url: https://lorenzonavarini.github.io/intro_metrics_W2026/
+
+repo_url: https://github.com/lorenzonavarini/intro_metrics_W2026
+repo_name: lorenzonavarini/intro_metrics_W2026
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Guides:
+      - First steps: guides/first-steps.md
+      - Computing setup: guides/computing-setup.md
+      - Reproducible workflow: guides/reproducible-workflow.md
+  - References:
+      - Git and GitHub: references/git-github.md
+      - Python: references/python.md
+      - Markdown: references/markdown.md
+  - Troubleshooting:
+      - Common issues: troubleshooting/common-issues.md

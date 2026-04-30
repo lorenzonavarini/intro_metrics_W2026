@@ -1,8 +1,15 @@
-# Intro Metrics W2026
+# Introductory Econometrics (W2026)
 
-Welcome to the course website for Intro Metrics W2026.
+<div class="course-hero">
+  <img src="assets/images/univie-logo.png" alt="University of Vienna logo">
+  <div>
+    <p class="course-kicker">University of Vienna</p>
+    <h1>Introductory Econometrics (W2026)</h1>
+    <p>Course materials, setup instructions, references, and troubleshooting notes.</p>
+  </div>
+</div>
 
-This site will collect course materials, setup instructions, references, and troubleshooting notes.
+Welcome to the course website for Introductory Econometrics (W2026).
 
 ## Course Goals
 

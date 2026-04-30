@@ -1,5 +1,5 @@
-site_name: Intro Metrics W2026
-site_description: Course materials, guides, and references for Intro Metrics W2026.
+site_name: Introductory Econometrics (W2026)
+site_description: Course materials, guides, and references for Introductory Econometrics (W2026).
 site_url: https://lorenzonavarini.github.io/intro_metrics_W2026/
 
 repo_url: https://github.com/lorenzonavarini/intro_metrics_W2026
@@ -8,6 +8,8 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  logo: assets/images/univie-logo.png
+  favicon: assets/images/univie-logo.png
   features:
     - navigation.sections
     - navigation.expand
@@ -15,6 +17,17 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/univie.css
+
+extra_javascript:
+  - javascripts/module1.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 plugins:
   - search
@@ -25,9 +38,20 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
 
 nav:
   - Home: index.md
+  - Modules:
+      - Module 1:
+          - Overview: modules/module 1/module1.md
+          - 1. Econometrics and Questions: modules/module 1/01-econometrics-questions.md
+          - 2. Data, Models, and Causality: modules/module 1/02-data-causality.md
+          - 3. Random Variables and Moments: modules/module 1/03-random-variables.md
+          - 4. Conditional Distributions: modules/module 1/04-conditional-distributions.md
+          - 5. Random Sampling and Convergence: modules/module 1/05-sampling-convergence.md
+          - 6. Matrix Notation and Estimation: modules/module 1/06-estimation.md
   - Guides:
       - First steps: guides/first-steps.md
       - Computing setup: guides/computing-setup.md

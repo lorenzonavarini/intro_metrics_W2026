@@ -1,4 +1,4 @@
-# Intro Metrics W2026 Website
+# Introductory Econometrics (W2026) Website
 
 This repository contains a Material for MkDocs course website.
 
